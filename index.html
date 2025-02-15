@@ -5,11 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Indian Calorie Tracker</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
 </head>
 <body>
-    <!-- Rest of the HTML remains the same -->
-    <script src="js/app.js"></script>
+    <div class="container">
+        <div class="header">
+            <h1>Indian Calorie Tracker</h1>
+            <p>Track your daily calorie intake</p>
+        </div>
+
+        <div class="card">
+            <form id="entryForm" onsubmit="addEntry(event)">
+                <div class="form-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" class="form-control" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="foodSelect">Common Indian Foods</label>
+                    <select id="foodSelect" class="form-control" onchange="selectFood()">
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="food">Custom Food Item</label>
+                    <input type="text" id="food" class="form-control" placeholder="Or enter custom food item">
+                </div>
+                
+                <div class="form-group">
+                    <label for="calories">Calories</label>
+                    <input type="number" id="calories" class="form-control" placeholder="Enter calories" required min="0">
+                </div>
+                
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-plus"></i>
+                    Add Entry
+                </button>
+            </form>
+
+            <div id="nutritionInfo"></div>
+        </div>
+
+        <div class="card">
+            <h2>Today's Entries</h2>
+            <div id="entriesList" class="entries-list"></div>
+            
+            <div class="summary">
+                <h3>Daily Summary</h3>
+                <p>Total Calories: <strong id="totalCalories">0</strong></p>
+                <div id="dailyNutritionSummary"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="./js/app.js"></script>
 </body>
 </html>
