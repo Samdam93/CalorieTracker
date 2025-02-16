@@ -1,11 +1,10 @@
 const CACHE_NAME = 'calorie-tracker-v1';
-const baseURL = '/calorie-tracker';  // Your repository name
 const urlsToCache = [
-  `${baseURL}/`,
-  `${baseURL}/index.html`,
-  `${baseURL}/css/styles.css`,
-  `${baseURL}/js/app.js`,
-  `${baseURL}/data/food_data.csv`,
+  '/',
+  '/index.html',
+  '/css/styles.css',
+  '/js/app.js',
+  '/data/food_data.csv',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css',
   'https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js'
 ];
